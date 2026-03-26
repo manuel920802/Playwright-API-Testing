@@ -7,9 +7,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type":"module",
+  "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^24.10.1"
+    "@types/node": "^24.10.1",
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1",
+    "genson-js": "^0.0.8"
   }
 }

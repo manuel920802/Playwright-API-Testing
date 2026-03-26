@@ -146,6 +146,7 @@ export class RequestHandler {
     });
   }
 
+  //Method to build the URL to be used while sending HTTP requests
   private getUrl() {
     const url = new URL(
       `${this.baseUrl || this.defaultBaseUrl}${this.apiPath}`,
