@@ -1,9 +1,9 @@
 import { test as base } from "@playwright/test";
-import { RequestHandler } from "./request-handler";
-import { APILogger } from "./logger";
-import { setCustomExpectLogger } from "./custom-expect";
-import { config } from "../api-test-config";
-import { createToken } from "../helpers/createToken";
+import { RequestHandler } from "./request-handler.js";
+import { APILogger } from "./logger.js";
+import { setCustomExpectLogger } from "./custom-expect.js";
+import { config } from "../api-test-config.js";
+import { createToken } from "../helpers/createToken.js";
 
 export type TestOptions = {
   api: RequestHandler;

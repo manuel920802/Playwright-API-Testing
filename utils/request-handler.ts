@@ -1,5 +1,5 @@
 import { APIRequestContext } from "@playwright/test";
-import { APILogger } from "./logger";
+import { APILogger } from "./logger.js";
 import { test } from "@playwright/test";
 
 export class RequestHandler {

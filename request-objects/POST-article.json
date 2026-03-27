@@ -1,0 +1,8 @@
+{
+  "article": {
+    "title": "Test article pwapi",
+    "description": "test description pwapi",
+    "body": "test article pwapi body",
+    "tagList": ["tag-pwapi"]
+  }
+}

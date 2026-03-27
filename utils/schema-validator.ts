@@ -1,12 +1,12 @@
 import fs from "fs/promises";
 import path from "path";
-import Ajv from "ajv";
+import { Ajv as AjvClass } from "ajv";
 import { createSchema } from "genson-js";
-import addFormats from "ajv-formats";
+import addFormats from "ajv-formats/dist/index.js";
 
 const SCHEMA_BASE_PATH = "./response-schemas";
-const ajv = new Ajv({ allErrors: true });
-addFormats(ajv);
+const ajv = new AjvClass({ allErrors: true });
+(addFormats as unknown as (ajv: AjvClass) => AjvClass)(ajv);
 
 export async function validateSchema(
   dirName: string,

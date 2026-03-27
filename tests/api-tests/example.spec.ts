@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import { request } from "http";
 let authToken: string;
 
 test.beforeAll("Run before all tests", async ({ request }) => {
