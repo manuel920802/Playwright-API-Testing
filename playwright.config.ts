@@ -5,7 +5,7 @@ export default defineConfig({
   fullyParallel: false,
   retries: process.env.CI ? 2 : 1,
   workers: 1,
-  reporter: [["html"], ["list"]],
+  reporter: [["html", { open: "never" }], ["list"]],
   use: {
     baseURL: "https://conduit.bondaracademy.com/",
     trace: "retain-on-failure",

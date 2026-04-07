@@ -81,6 +81,10 @@ test("Create, Update, and Delete Article", async ({ api }) => {
     .params({ limit: 10, offset: 0 })
     .getRequest(200);
 
+  await expect(createArticleResponse).shouldMatchSchema(
+    "articles",
+    "POST_articles",
+  );
   expect(articlesResponse.articles[0].title).shouldEqual(articleTitle);
 
   const articleTitleUpdated = faker.lorem.sentence(5);
@@ -90,6 +94,10 @@ test("Create, Update, and Delete Article", async ({ api }) => {
     .body(articleRequest)
     .putRequest(200);
 
+  await expect(updateArticleResponse).shouldMatchSchema(
+    "articles",
+    "PUT_articles",
+  );
   expect(updateArticleResponse.article.title).shouldEqual(articleTitleUpdated);
   const newSlugId = updateArticleResponse.article.slug;
 
@@ -98,6 +106,10 @@ test("Create, Update, and Delete Article", async ({ api }) => {
     .params({ limit: 10, offset: 0 })
     .getRequest(200);
 
+  await expect(updateArticleResponse).shouldMatchSchema(
+    "articles",
+    "PUT_articles",
+  );
   expect(articlesResponseTwo.articles[0].title).shouldEqual(
     articleTitleUpdated,
   );
